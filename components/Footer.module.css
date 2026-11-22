@@ -1,0 +1,12 @@
+.footer { background: var(--navy); color: #8d99b8; padding: 40px 0 28px; font-size: 14px; }
+
+.inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+
+.logo { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-weight: 800; font-size: 17px; }
+.logo img { border-radius: 10px; width: 40px; height: 40px; }
+
+.links { display: flex; gap: 6px 20px; flex-wrap: wrap; }
+.links a { color: #c9d1e8; text-decoration: none; }
+.links a:hover { color: var(--mint); }
+
+.copy { margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.1); font-size: 13px; }

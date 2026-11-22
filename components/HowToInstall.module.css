@@ -1,0 +1,13 @@
+.band { position: relative; overflow: hidden; background: var(--navy); color: #fff; padding: 90px 0; }
+.band::before { content: ""; position: absolute; width: 520px; height: 520px; border-radius: 50%; background: var(--mint); filter: blur(140px); opacity: .16; top: -220px; right: -120px; pointer-events: none; }
+.band .inner { position: relative; }
+.band h2 { color: #fff; }
+
+.steps { list-style: none; counter-reset: s; padding: 0; margin: 40px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 860px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
+
+.steps li { counter-increment: s; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius); padding: 20px; color: #d3daee; font-size: 15px; }
+.steps li::before { content: "0" counter(s); display: block; font-size: 38px; font-weight: 900; line-height: 1; margin-bottom: 14px; color: transparent; -webkit-text-stroke: 1.5px var(--mint); }
+
+@media (max-width: 640px) { .band { padding: 52px 0; } .steps { margin-top: 28px; gap: 12px; } .steps li { padding: 18px; } .steps li::before { font-size: 32px; margin-bottom: 10px; } }

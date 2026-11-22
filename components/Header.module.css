@@ -1,0 +1,17 @@
+.header { background: rgba(255,255,255,.88); backdrop-filter: blur(14px); position: sticky; top: 0; z-index: 30; border-bottom: 1px solid var(--line); box-shadow: 0 1px 0 rgba(255,255,255,.8), 0 8px 24px rgba(14,23,41,.04); }
+.inner { display: flex; align-items: center; justify-content: space-between; height: 66px; }
+
+.logo { font-weight: 800; font-size: 17px; color: var(--ink); text-decoration: none; letter-spacing: -.3px; display: flex; align-items: center; gap: 11px; }
+.logo img { width: 38px; height: 38px; border-radius: 11px; box-shadow: 0 4px 12px rgba(14,23,41,.18); }
+
+/* Segmented menu */
+.nav { display: flex; align-items: center; gap: 2px; padding: 4px; background: var(--soft); border: 1px solid var(--line); border-radius: 12px; }
+.nav a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 600; padding: 7px 16px; border-radius: 9px; transition: color .15s, background .15s, box-shadow .15s; }
+.nav a:hover { color: var(--ink); }
+.nav a.active { background: var(--ink); color: #fff; box-shadow: 0 4px 12px rgba(14,23,41,.22); }
+
+@media (max-width: 480px) {
+  .logo span { font-size: 15px; }
+  .nav a { padding: 6px 11px; font-size: 13px; }
+}
+@media (max-width: 380px) { .logo span { display: none; } }

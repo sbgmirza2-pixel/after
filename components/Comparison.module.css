@@ -1,0 +1,23 @@
+.section { padding: 90px 0 40px; }
+.head { text-align: center; }
+
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; }
+@media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
+.grid .card:last-child:nth-child(odd) { grid-column: 1 / -1; }
+
+.card { background: var(--soft); border: 1px solid var(--line); border-radius: 24px; padding: 24px; }
+.card p { margin: 16px 0 0; color: var(--muted); font-size: 14.5px; line-height: 1.65; }
+
+.versus { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.us { background: var(--ink); color: #fff; font-weight: 700; font-size: 14px; padding: 6px 14px; border-radius: 8px; }
+.versus b { width: 30px; height: 30px; border-radius: 8px; background: var(--mint); color: var(--ink); font-size: 11px; display: grid; place-items: center; }
+.versus h3 { margin: 0; font-size: 14px; font-weight: 700; padding: 6px 14px; border-radius: 8px; border: 1.5px solid var(--ink); }
+
+@media (max-width: 640px) {
+  .section { padding: 52px 0 12px; }
+  .grid { margin-top: 28px; }
+  .card { padding: 18px; border-radius: 18px; }
+  .versus { gap: 6px; }
+  .us, .versus h3 { font-size: 12.5px; padding: 5px 9px; }
+  .versus b { width: 26px; height: 26px; font-size: 10px; }
+}

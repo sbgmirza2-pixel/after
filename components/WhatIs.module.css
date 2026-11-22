@@ -1,0 +1,12 @@
+.section { padding: 40px 0 80px; }
+
+.grid { display: grid; grid-template-columns: 5fr 7fr; gap: 56px; align-items: start; }
+@media (max-width: 860px) { .grid { grid-template-columns: 1fr; gap: 20px; } }
+
+.side { position: sticky; top: 140px; }
+@media (max-width: 860px) { .side { position: static; } }
+
+.body p { color: var(--muted); }
+.body .quote { font-size: 16.5px; line-height: 1.7; color: var(--text); font-weight: 500; border-left: 4px solid var(--mint); padding-left: 20px; margin-bottom: 22px; }
+
+@media (max-width: 640px) { .section { padding: 24px 0 36px; } .body .quote { font-size: 15.5px; padding-left: 16px; } }

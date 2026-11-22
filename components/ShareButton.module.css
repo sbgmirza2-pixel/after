@@ -1,0 +1,45 @@
+.share { position: relative; }
+
+/* Button: navy fill + mint icon badge (Download button jitna hi height) */
+.button { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; height: 46px; padding: 0 14px 0 7px; border-radius: 10px; background: var(--ink); color: #fff; font-size: 15px; font-weight: 700; box-shadow: 0 10px 24px rgba(14,23,41,.22); transition: transform .15s, box-shadow .15s; user-select: none; }
+.button::-webkit-details-marker { display: none; }
+.button:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(14,23,41,.3); }
+
+.badge { width: 32px; height: 32px; border-radius: 8px; background: var(--mint); color: var(--ink); display: grid; place-items: center; }
+.chev { opacity: .7; transition: transform .2s; }
+.share[open] .chev { transform: rotate(180deg); }
+
+/* Dark panel */
+.panel { position: absolute; z-index: 10; top: calc(100% + 14px); left: 50%; width: 296px; padding: 14px; background: var(--navy); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; box-shadow: 0 28px 70px rgba(14,23,41,.35); text-align: left; transform: translateX(-50%); transform-origin: top center; animation: pop .18s ease-out; }
+.panel::before { content: ""; position: absolute; top: -7px; left: 50%; width: 12px; height: 12px; background: var(--navy); border-left: 1px solid rgba(255,255,255,.1); border-top: 1px solid rgba(255,255,255,.1); transform: translateX(-50%) rotate(45deg); }
+
+@keyframes pop {
+  from { opacity: 0; transform: translateX(-50%) translateY(-6px) scale(.97); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+}
+
+/* 2x2 tiles: icon + naam */
+.tiles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.tiles a { display: flex; align-items: center; gap: 10px; padding: 8px 10px 8px 8px; border-radius: 12px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08); color: #e7ecf8; text-decoration: none; font-size: 14px; font-weight: 600; transition: background .15s, border-color .15s, transform .15s; }
+.tiles a:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.2); transform: translateY(-2px); }
+.ico { width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center; color: #fff; flex: none; }
+
+.tiles a[data-brand="whatsapp"] .ico { background: #25d366; }
+.tiles a[data-brand="telegram"] .ico { background: #229ed9; }
+.tiles a[data-brand="facebook"] .ico { background: #1877f2; }
+.tiles a[data-brand="x"] .ico { background: #000; box-shadow: inset 0 0 0 1px rgba(255,255,255,.25); }
+
+/* Link copy row */
+.copyRow { display: flex; align-items: center; gap: 8px; margin-top: 10px; padding: 5px 5px 5px 12px; background: rgba(0,0,0,.28); border: 1px dashed rgba(255,255,255,.22); border-radius: 10px; }
+.link { flex: 1; min-width: 0; font-size: 13px; color: #9fabc9; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.copyRow button { flex: none; font: inherit; font-size: 13px; font-weight: 700; color: var(--ink); background: var(--mint); border: 0; border-radius: 8px; padding: 7px 14px; cursor: pointer; transition: filter .15s; }
+.copyRow button:hover { filter: brightness(1.08); }
+.copyRow button.done { background: #fff; }
+
+/* Chhoti screen: panel buttons ki row ke beech mein, screen ke andar */
+@media (max-width: 640px) {
+  .share { position: static; }
+  .panel { left: 50%; right: auto; top: calc(100% + 10px); width: min(296px, calc(100vw - 40px)); transform: translateX(-50%); animation: pop .18s ease-out; }
+  .panel::before { display: none; }
+}
+@media (max-width: 380px) { .tiles a { font-size: 13px; } }

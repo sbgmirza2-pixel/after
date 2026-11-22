@@ -1,0 +1,12 @@
+.section { padding: 70px 0 30px; }
+
+.banner { position: relative; overflow: hidden; text-align: center; color: #fff; border-radius: 32px; padding: 64px 28px; background: linear-gradient(135deg, var(--navy) 0%, #0e5f52 100%); }
+.banner::before, .banner::after { content: ""; position: absolute; border-radius: 50%; border: 2px solid rgba(25,211,162,.35); pointer-events: none; }
+.banner::before { width: 420px; height: 420px; right: -140px; top: -170px; }
+.banner::after { width: 260px; height: 260px; left: -90px; bottom: -120px; border-color: rgba(255,255,255,.18); }
+
+.banner h2 { position: relative; color: #fff; font-size: clamp(30px, 5vw, 46px); line-height: 1.1; letter-spacing: -1px; margin: 0 0 16px; }
+.banner p { position: relative; max-width: 660px; margin: 0 auto 28px; color: #cfe9e3; }
+.banner :global(.btn) { position: relative; background: #fff; color: var(--ink) !important; box-shadow: 0 12px 30px rgba(0,0,0,.3); }
+
+@media (max-width: 640px) { .section { padding: 40px 0 12px; } .banner { padding: 40px 20px; border-radius: 22px; } }
